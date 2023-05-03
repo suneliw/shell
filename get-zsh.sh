@@ -12,6 +12,7 @@ if [ -d "$HOME/.oh-my-zsh" ]
 then
   echo "oh-my-zsh已经安装"
 else
+  echo "安装oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
@@ -20,6 +21,7 @@ if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]
 then
   echo "zsh-syntax-highlighting插件已经安装"
 else
+  echo "安装zsh-syntax-highlighting插件"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
 
@@ -28,10 +30,12 @@ if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]
 then
   echo "zsh-autosuggestions插件已经安装"
 else
+  echo "安装zsh-autosuggestions插件"
   git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
 # 修改.zshrc文件
+echo "修改.zshrc文件"
 sed -i 's/^plugins=.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' $HOME/.zshrc
 
 # 重新启动zsh
